@@ -5,7 +5,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
   .then(response => response.json())
   .then(data => {
     const posts = data.feed.entry || [];
-    const container = document.getElementById('recent-posts');
+    const container = document.getElementById('recent-produk');
 
     posts.forEach(post => {
       const title = post.title.$t;
