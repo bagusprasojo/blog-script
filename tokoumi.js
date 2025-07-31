@@ -34,9 +34,17 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
             <h5 class='card-title'>${title}</h5>            
             <div class='d-flex justify-content-between'>
               <a class='btn btn-sm btn-dark' href='${link}'>Detail</a>
-              <a class='btn btn-sm btn-outline-secondary' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}' target='_blank'>
+              <div class='btn-group'>
+              <button type='button' class='btn btn-sm btn-outline-secondary dropdown-toggle' data-bs-toggle='dropdown'>
                 Bagikan
-              </a>
+              </button>
+              <ul class='dropdown-menu dropdown-menu-end'>
+                <li><a class='dropdown-item' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}'>Facebook</a></li>
+                <li><a class='dropdown-item' target='_blank' href='https://wa.me/?text=${encodeURIComponent(title + " " + link)}'>WhatsApp</a></li>
+                <li><a class='dropdown-item' target='_blank' href='https://twitter.com/intent/tweet?text=${encodeURIComponent(title + " " + link)}'>Twitter</a></li>
+              </ul>
+            </div>
+
             </div>
           </div>
         </div>
