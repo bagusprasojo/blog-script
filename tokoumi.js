@@ -36,7 +36,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
               <a class='btn btn-sm btn-dark' href='${link}'>Detail</a>
               <div class='btn-group'>
               <button type='button' class='btn btn-sm btn-outline-secondary dropdown-toggle' data-bs-toggle='dropdown'>
-                Bagikan
+                Share
               </button>
               <ul class='dropdown-menu dropdown-menu-end'>
                 <li><a class='dropdown-item' target='_blank' href='https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}'>Facebook</a></li>
