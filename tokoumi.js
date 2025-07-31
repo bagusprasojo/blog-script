@@ -31,7 +31,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
         <div class='card product-card'>
           <img src='${imgSrc}' class='card-img-top' alt='${title}' />
           <div class='card-body text-center'>
-            <h5 class='card-title'><a href='${link}'>${title}</a></h5>            
+            <h5 class='card-title'>${title}</h5>            
             <a class='btn btn-sm btn-dark' href='${link}'>Baca Selengkapnya</a>
           </div>
         </div>
