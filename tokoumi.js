@@ -32,7 +32,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
           <img src='${imgSrc}' class='card-img-top' alt='${title}' />
           <div class='card-body text-center'>
             <h5 class='card-title'>${title}</h5>            
-            <div class='d-flex-- justify-content-between'>
+            <div class='justify-content-between'>
               <a class='btn btn-sm btn-dark' href='${link}'>Detail</a>
               <div class='btn-group'>
               <button type='button' class='btn btn-sm btn-outline-secondary dropdown-toggle' data-bs-toggle='dropdown'>
