@@ -84,18 +84,11 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Terjual?alt=json&max-result
       col.className = 'col-6 col-md-4 col-lg-3';
 
       col.innerHTML = `
-        <div class='card product-card'>
-          <div class='card-body text-center'>
-            <h5 class='card-title'>${title}</h5>            
-            <div class='justify-content-between'>
-              <a class='btn btn-sm btn-dark' href='${link}'>Detail</a>
-              <div class='btn-group'>
-              <button type='button' class='btn btn-sm btn-outline-secondary dropdown-toggle' data-bs-toggle='dropdown'>
-                Share
-              </button>              
-            </div>
-
-            </div>
+        <div class='card h-100 shadow-sm'>
+          <div class='card-body'>
+            <h5 class='card-title'><a href='${link}'>${title}</a></h5>
+            <p class='card-text'>${snippet}...</p>
+            <a class='btn btn-sm btn-primary' href='${link}'>Baca Selengkapnya</a>
           </div>
         </div>
       `;
