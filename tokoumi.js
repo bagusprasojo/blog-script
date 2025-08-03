@@ -28,7 +28,8 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
 
       col.innerHTML = `
         <div class='card product-card'>
-          <img  src='${imgSrc}' class='card-img-top' alt='${title}' />
+          
+          <img src='${imgSrc}' class='card-img-top' alt='${title}' width='244' height='366' style='height:auto; width:100%; object-fit:cover;' loading='lazy' />
           <div class='card-body text-center'>
             <h5 class='card-title'>${title}</h5>            
             <div class='justify-content-between'>
