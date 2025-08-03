@@ -31,7 +31,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
           
           <img src='${imgSrc}' class='card-img-top' alt='${title}' width='244' height='366' style='height:auto; width:100%; object-fit:cover;' loading='lazy' />
           <div class='card-body text-center'>
-            <h5 class='card-title'>${title}</h5>            
+            <h4 class='card-title'>${title}</h4>            
             <div class='justify-content-between'>
               <a class='btn btn-sm btn-dark' href='${link}'>Detail</a>
               <div class='btn-group'>
@@ -87,7 +87,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Terjual?alt=json&max-result
       col.innerHTML = `
         <div class='card h-100 shadow-sm'>
           <div class='card-body'>
-            <h5 class='card-title'><a href='${link}'>${title}</a></h5>
+            <h4 class='card-title'><a href='${link}'>${title}</a></h4>
             <p class='card-text'>${snippet}...</p>
             <a class='btn btn-sm btn-primary' href='${link}'>Baca Selengkapnya</a>
           </div>
