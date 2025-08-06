@@ -1,5 +1,5 @@
 // Produk
-fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results=8')
+//fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results=8')
 
   .then(response => response.json())
   .then(data => {
