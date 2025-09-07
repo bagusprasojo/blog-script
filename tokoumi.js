@@ -32,7 +32,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
             <h6 class='card-title'><a href='${link}'>${title}</a></h6>            
           </div>      
           <div class='card-body text-center'>
-            <img src='${imgSrc}' class='card-img-top' alt='${title}' width='244' height='366' style='height:auto; width:100%; object-fit:cover;' loading='lazy' />
+            <a href='${link}'><img src='${imgSrc}' class='card-img-top' alt='${title}' width='244' height='366' style='height:auto; width:100%; object-fit:cover;' loading='lazy' /></a>
           </div>
           <div class='card-footer'>
             <div class='d-flex justify-content-center gap-2'>
