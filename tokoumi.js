@@ -32,8 +32,8 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
             <h6 class='card-title'><a href='${link}'>${title}</a></h6>            
           </div>      
           <img src='${imgSrc}' class='card-img-top' alt='${title}' width='244' height='366' style='height:auto; width:100%; object-fit:cover;' loading='lazy' />
-          <div class='d-flex card-footer text-center'>
-            <div class='justify-content-between'>
+          <div class='card-footer'>
+            <div class='d-flex justify-content-center gap-2'>
               <a class='btn btn-sm btn-dark' href='${link}'>Detail</a>
               <div class='btn-group'>
               <button type='button' class='btn btn-sm btn-outline-secondary dropdown-toggle' data-bs-toggle='dropdown'>
