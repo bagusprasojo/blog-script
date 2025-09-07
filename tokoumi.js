@@ -28,7 +28,7 @@ fetch('https://www.tokoumi.com/feeds/posts/default/-/Produk?alt=json&max-results
 
       col.innerHTML = `
         <div class="card shadow-sm border-0 h-100">    
-          <div class="card-header">
+          <div class="card-header d-flex justify-content-center">
             <h6 class='card-title'><a href='${link}'>${title}</a></h6>            
           </div>      
           <div class='card-body text-center'>
