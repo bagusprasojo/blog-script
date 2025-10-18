@@ -55,7 +55,7 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
               </div>
 
               <!-- Baris kedua: Gambar + Snippet -->
-              <div class="col-md-4 col-12">
+              <div class="col-md-4 col-12 d-flex flex-column justify-content-start">
                 <a href="${link}">
                   <img src="${imgSrc}" alt="${title}" class="img-fluid rounded" 
                        style="width:100%; object-fit:cover;" loading="lazy" />
@@ -63,7 +63,7 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
               </div>
               <div class="col-md-8 col-12 text-start">
                 <p class="text-muted" style="font-size: 0.95rem;">
-                  ${content.replace(/<[^>]+>/g, '').substring(0, 360)}...
+                  ${content.replace(/<[^>]+>/g, '').substring(0, 480)}...
                 </p>
 
                 <!-- Tombol share -->
