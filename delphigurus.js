@@ -138,3 +138,16 @@ document.addEventListener('DOMContentLoaded', async function () {
   totalPosts = await getTotalPosts('Artikel');
   loadArtikelByLabel('Artikel', 1);
 });
+
+if (document.readyState === 'complete' || document.readyState === 'interactive') {
+  // DOM sudah siap
+  getTotalPosts('Artikel').then(total => {
+    totalPosts = total;
+    loadArtikelByLabel('Artikel', 1);
+  });
+} else {
+  document.addEventListener('DOMContentLoaded', async function () {
+    totalPosts = await getTotalPosts('Artikel');
+    loadArtikelByLabel('Artikel', 1);
+  });
+}
