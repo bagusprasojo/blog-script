@@ -42,7 +42,7 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
         const col = document.createElement('div');
         col.className = 'col-12 mb-4';
         col.innerHTML = `
-          <div class="card shadow-sm border-0 p-3 h-100">
+          <div class="card shadow-sm border-0 h-100">
             <div class="row g-3 align-items-center">
               
               <!-- Baris pertama: Judul -->
