@@ -40,29 +40,46 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
         const link_beli = `https://wa.me/${waNumber}?text=${message}`;
 
         const col = document.createElement('div');
-        col.className = 'col-6 col-md-4 col-lg-3';
+        col.className = 'col-12 mb-4';
         col.innerHTML = `
-          <div class="card shadow-sm border-0 h-100">
-          	<div class="card-header">
-              <h6 class='card-title'><a href='${link}'>${title}</a></h6>            
-            </div>
-          	<div class='card-body text-center'>
-              <a href='${link}'><img src='${imgSrc}' class='card-img-top' alt='${title}' style='height:auto; width:100%; object-fit:cover;' loading='lazy' /></a>
-            
-                          
+          <div class="card shadow-sm border-0 p-3 h-100">
+            <div class="row g-3 align-items-center">
               
-            </div>
-            <div class="card-footer">
-              <div class='d-flex justify-content-center gap-2'>                
-                <div class="btn-group">
-      <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown">Share</button>
-      <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}">Facebook</a></li>
-        <li><a class="dropdown-item" target="_blank" href="https://wa.me/?text=${encodeURIComponent(title + ' ' + link)}">WhatsApp</a></li>
-        <li><a class="dropdown-item" target="_blank" href="https://twitter.com/intent/tweet?text=${encodeURIComponent(title + ' ' + link)}">Twitter</a></li>                
-      </ul>
-    </div>
-    <a class="btn btn-sm btn-primary" href="${link_beli}">🛒 Beli</a>
+              <!-- Baris pertama: Judul -->
+              <div class="col-12">
+                <h4 class="card-title mb-2">
+                  <a href="${link}" class="text-decoration-none text-dark fw-bold">
+                    ${title}
+                  </a>
+                </h4>
+              </div>
+
+              <!-- Baris kedua: Gambar + Snippet -->
+              <div class="col-md-4 col-12">
+                <a href="${link}">
+                  <img src="${imgSrc}" alt="${title}" class="img-fluid rounded" 
+                       style="width:100%; object-fit:cover;" loading="lazy" />
+                </a>
+              </div>
+              <div class="col-md-8 col-12">
+                <p class="text-muted" style="font-size: 0.95rem;">
+                  ${content.replace(/<[^>]+>/g, '').substring(0, 180)}...
+                </p>
+
+                <!-- Tombol share -->
+                <div class="d-flex gap-2 mt-2">
+                  <a class="btn btn-sm btn-outline-primary" target="_blank" 
+                     href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(link)}">
+                     <i class="bi bi-facebook"></i> Facebook
+                  </a>
+                  <a class="btn btn-sm btn-outline-success" target="_blank" 
+                     href="https://wa.me/?text=${encodeURIComponent(title + ' ' + link)}">
+                     <i class="bi bi-whatsapp"></i> WhatsApp
+                  </a>
+                  <a class="btn btn-sm btn-outline-info" target="_blank" 
+                     href="https://twitter.com/intent/tweet?text=${encodeURIComponent(title + ' ' + link)}">
+                     <i class="bi bi-twitter-x"></i> Twitter
+                  </a>
                 </div>
               </div>
             </div>
