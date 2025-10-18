@@ -62,8 +62,9 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
                 </a>
               </div>
               <div class="col-md-8 col-12 text-start">
-                <p class="text-muted" style="font-size: 0.95rem;">
-                  ${content.replace(/<[^>]+>/g, '').substring(0, 480)}...
+                <p class="text-muted" style="font-size: 1.1rem;">
+                  ${content.replace(/<[^>]+>/g, '').substring(0, 480)}
+                  <a href="${link}">Selengkapnya .....</a>
                 </p>
 
                 <!-- Tombol share -->
