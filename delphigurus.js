@@ -1,17 +1,17 @@
 let currentPage = 1;
 const perPage = 8;
-let currentLabel = 'Produk';
+let currentLabel = 'Artikel';
 let totalPosts = 0;
 
 // Hitung total postingan berdasarkan label
 function getTotalPosts(label) {
-  const url = `https://www.tokoumi.com/feeds/posts/summary/-/${encodeURIComponent(label)}?alt=json`;
+  const url = `https://delphigurus.blogspot.com/feeds/posts/summary/-/${encodeURIComponent(label)}?alt=json`;
   return fetch(url)
     .then(res => res.json())
     .then(data => parseInt(data.feed.openSearch$totalResults.$t));
 }
 
-function loadProdukByLabel(label = 'Produk', page = 1) {
+function loadProdukByLabel(label = 'Artikel', page = 1) {
   currentLabel = label;
   currentPage = page;
 
@@ -19,7 +19,7 @@ function loadProdukByLabel(label = 'Produk', page = 1) {
   container.innerHTML = `<div class="col-12 text-center"><p>Loading...</p></div>`;
 
   const startIndex = (page - 1) * perPage + 1;
-  const url = `https://www.tokoumi.com/feeds/posts/default/-/${encodeURIComponent(label)}?alt=json&start-index=${startIndex}&max-results=${perPage}`;
+  const url = `https://delphigurus.blogspot.com/feeds/posts/default/-/${encodeURIComponent(label)}?alt=json&start-index=${startIndex}&max-results=${perPage}`;
 
   fetch(url)
     .then(response => response.json())
