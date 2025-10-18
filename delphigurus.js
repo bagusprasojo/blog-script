@@ -11,11 +11,11 @@ function getTotalPosts(label) {
     .then(data => parseInt(data.feed.openSearch$totalResults.$t));
 }
 
-function loadProdukByLabel(label = 'Artikel', page = 1) {
+function loadArtikelByLabel(label = 'Artikel', page = 1) {
   currentLabel = label;
   currentPage = page;
 
-  const container = document.getElementById('recent-produk');
+  const container = document.getElementById('recent-Artikel');
   container.innerHTML = `<div class="col-12 text-center"><p>Loading...</p></div>`;
 
   const startIndex = (page - 1) * perPage + 1;
@@ -36,7 +36,7 @@ function loadProdukByLabel(label = 'Artikel', page = 1) {
         const imgSrc = imgMatch && imgMatch[1] ? imgMatch[1] : 'https://via.placeholder.com/300x200?text=No+Image';
 
         const waNumber = "62895801987058";
-        const message = encodeURIComponent(`Halo, saya berminat membeli produk "${title}".\nHalaman: ${link}`);
+        const message = encodeURIComponent(`Halo, saya berminat membeli Artikel "${title}".\nHalaman: ${link}`);
         const link_beli = `https://wa.me/${waNumber}?text=${message}`;
 
         const col = document.createElement('div');
@@ -75,7 +75,7 @@ function loadProdukByLabel(label = 'Artikel', page = 1) {
     })
     .catch(error => {
       console.error('Gagal memuat postingan:', error);
-      container.innerHTML = `<div class="col-12 text-center"><p class="text-muted">Tidak ada produk ditemukan.</p></div>`;
+      container.innerHTML = `<div class="col-12 text-center"><p class="text-muted">Tidak ada Artikel ditemukan.</p></div>`;
     });
 }
 
@@ -89,21 +89,21 @@ function renderPagination() {
   // Tombol Prev
   pagination.innerHTML += `
     <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
-      <a class="page-link" href="#" onclick="loadProdukByLabel('${currentLabel}', ${currentPage - 1})">Prev</a>
+      <a class="page-link" href="#" onclick="loadArtikelByLabel('${currentLabel}', ${currentPage - 1})">Prev</a>
     </li>`;
 
   // Nomor halaman
   for (let i = 1; i <= totalPages; i++) {
     pagination.innerHTML += `
       <li class="page-item ${i === currentPage ? 'active' : ''}">
-        <a class="page-link" href="#" onclick="loadProdukByLabel('${currentLabel}', ${i})">${i}</a>
+        <a class="page-link" href="#" onclick="loadArtikelByLabel('${currentLabel}', ${i})">${i}</a>
       </li>`;
   }
 
   // Tombol Next
   pagination.innerHTML += `
     <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
-      <a class="page-link" href="#" onclick="loadProdukByLabel('${currentLabel}', ${currentPage + 1})">Next</a>
+      <a class="page-link" href="#" onclick="loadArtikelByLabel('${currentLabel}', ${currentPage + 1})">Next</a>
     </li>`;
 }
 
@@ -112,12 +112,12 @@ document.querySelectorAll('.label-radio').forEach(radio => {
   radio.addEventListener('change', async function () {
     const labelDipilih = this.value;
     totalPosts = await getTotalPosts(labelDipilih);
-    loadProdukByLabel(labelDipilih, 1);
+    loadArtikelByLabel(labelDipilih, 1);
   });
 });
 
 // Muat awal dengan label default
 document.addEventListener('DOMContentLoaded', async function () {
-  totalPosts = await getTotalPosts('Produk');
-  loadProdukByLabel('Produk', 1);
+  totalPosts = await getTotalPosts('Artikel');
+  loadArtikelByLabel('Artikel', 1);
 });
