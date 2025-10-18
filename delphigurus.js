@@ -46,8 +46,8 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
             <div class="row g-3 align-items-center">
               
               <!-- Baris pertama: Judul -->
-              <div class="col-12">
-                <h4 class="card-title mb-2">
+              <div class="col-12 text-start">
+                <h5 class="card-title mb-2" style="font-size: 1.15rem; line-height: 1.4;">
                   <a href="${link}" class="text-decoration-none text-dark fw-bold">
                     ${title}
                   </a>
@@ -61,9 +61,9 @@ function loadArtikelByLabel(label = 'Artikel', page = 1) {
                        style="width:100%; object-fit:cover;" loading="lazy" />
                 </a>
               </div>
-              <div class="col-md-8 col-12">
+              <div class="col-md-8 col-12 text-start">
                 <p class="text-muted" style="font-size: 0.95rem;">
-                  ${content.replace(/<[^>]+>/g, '').substring(0, 180)}...
+                  ${content.replace(/<[^>]+>/g, '').substring(0, 360)}...
                 </p>
 
                 <!-- Tombol share -->
